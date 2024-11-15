@@ -1,0 +1,213 @@
+html{font-size:13px}.navbar{height:15rem;transition:.1s;top:52px}.navList{flex-direction:column;align-items:center;padding:.5rem 0}.listItem a{padding:.5rem 1rem}.burger{display:block}.h-nav-Resp{height:3rem}.v-class-Resp{display:none}@media only screen and (max-width:598px){.number{padding:.3rem}}@media only screen and (max-width:497px){.Sub-reason-why-Us{flex-direction:column}.padding-Left{padding-left:0}.product{padding:.8rem;}.marginTB{padding:1rem}.hassle-free{padding-right:0;}}@media only screen and (max-width:245px){html{font-size:10px}.navbar{top:40px}}@media only screen and (max-width:187px){html{font-size:8px}.navbar{top:32px}}@media only screen and (max-width:150px){html{font-size:6px}.navbar{top:24px}}@media only screen and (max-width:407px){.container{font-size:1rem;grid-template-columns:repeat(auto-fit,minmax(8.6rem,8.61rem))}}@media only screen and (max-width:407px){.brand-Container :last-of-type {padding-top:0.5rem;padding-bottom:0.5rem;}}@media only screen and (max-width:349px){.container{grid-gap:1rem .4rem}}@media only screen and (max-width:108px){.call,.heading-cities-Available,.heading-weDo,.mainHeading{font-size:1.5rem}.call-Us-now,.heading-about-Us,.heading-cities-Available{font-size:1.8rem}.marginTB{font-size:1.3rem}}@media only screen and (max-width:407px){span.hagra,a.hagra{padding-top: 0rem;padding-bottom: 0rem;}}
+
+
+
+.given-rating{
+
+flex-direction: column;    
+margin: 1rem 1rem;
+
+
+
+        }
+
+        .ratingbox{
+
+            position: relative;
+            width: 100%;
+            margin: 1rem 0rem;
+            
+                }
+
+@media only screen and (max-width:570px) {
+
+
+    .reviews-overview{
+margin-left: 1rem;
+
+
+    }
+
+
+
+
+    .bar-left {
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+
+    .bar-right{
+ 
+        margin: 2rem .5rem 1rem 2rem;
+
+    }
+.barr{
+
+width: 11rem;
+
+}
+        
+.rating-review{
+
+    padding: .2rem 0rem;
+}
+
+#one-review{
+
+    padding: .2rem .1rem;
+
+}
+
+
+
+
+
+
+
+.mainHeading2 {
+
+    font-size: 1.7rem;
+}
+
+.heading-weDo {
+    font-size: 1.5rem;
+   
+}
+
+
+.info-weDo {
+    font-size: 1.1rem;
+
+}
+
+
+.marginTB {
+    font-size: 1rem;
+}
+
+.ACcontent {
+  
+    font-size: 1.1rem;
+}
+
+.content-all-about {
+    font-size: 1.1rem;
+}
+
+.heading-about-Us, .heading-cities-Available {
+    font-size: 1.7rem;
+
+}
+
+.content-all-about-2 {
+    font-size: 1.1rem;
+
+}
+
+.heading-about-Us, .heading-cities-Available {
+    font-size: 1.7rem;
+  
+}
+
+
+
+
+
+.heading-why-Us {
+    font-size: 1.7rem;
+}
+
+
+.reason-content {
+    font-size: 1.2rem;
+}
+
+.heading-reviews {
+    font-size: 1.7rem;
+
+}
+
+.heading-faq {
+    font-size: 1.6rem;
+    
+}
+
+
+.ACcontent{
+
+font-size: 1.1rem;
+
+}
+
+
+.heading-all-about, .how-it-works{
+font-size: 1.4rem;
+
+
+}
+
+
+.extra-content-heading{
+
+font-size: 1.2rem;
+
+}
+
+.extra-content-heading{
+
+margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+.heading-all-about{
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+
+}
+
+
+.number {
+    font-size: 1.5rem;
+}
+
+.call {
+    font-size: 1.7rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+
+.product-Name{
+
+font-size: 1.7rem;
+
+}
+
+
+
+
+
+
+
+}
+
+
+@media only screen and (max-width:495px) {
+
+
+    .bar-reviews {
+
+flex-direction: column;
+    }
+
+    .bar-left {
+        border-right: none;
+    }
+
+    .heading-reviews{
+
+padding-bottom: 1rem;
+
+    }
+
+
+}
+

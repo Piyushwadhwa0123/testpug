@@ -1,0 +1,377 @@
+ 
+
+html{
+
+    font-size: 13px;
+
+}
+
+
+    /* Header */
+    
+    
+    .hdr{
+        
+        /* height: 3rem; */
+    }
+    
+     
+ 
+     /* Navbar */
+ 
+ 
+     .navbar{
+ 
+        height: 15rem;
+        transition: all .7s ;
+        top: 52px;
+
+        
+    }
+    
+    .navList{
+        
+        
+        
+
+        flex-direction: column;
+        align-items: center;
+        
+        padding: .5rem 0rem;
+        
+
+        }
+    
+    
+        
+        .listItem a{
+    
+            padding: .5rem 1rem;
+
+        
+        }
+    
+    
+        .burger{
+
+
+    
+    display: block;
+    
+        }
+    
+    .h-nav-Resp{
+    
+    height: 3rem;
+
+    
+    }
+    
+    .v-class-Resp{
+    
+    display: none;
+
+
+    
+    }
+   
+    
+  
+    
+    /* Number Section */
+    
+    /*     
+    .numberSection{
+    
+     
+        padding: .5rem;
+        padding-top: .8rem;
+    
+    }
+    
+    
+    .call{
+    
+    font-size: 1.8rem;
+    font-weight: 900;
+    
+    
+    }
+    
+    
+    
+    
+    .number {
+    
+    
+        
+    padding: .5rem;
+    
+        font-size: 1.4rem;
+        
+        
+    }
+     
+ */
+
+
+ @media only screen and (max-width:598px) {
+    
+
+
+
+.intro{
+
+flex-direction: column-reverse;
+align-items: center;
+justify-content: center;
+
+padding: 0.5rem 0rem;
+
+
+}
+
+
+.info-weDo {
+    padding: 0.3rem;
+    
+}
+
+ 
+.padding-X{
+
+padding: 0.3rem .8rem;
+
+}
+
+
+
+
+.weDo{
+
+width: 100%;
+
+}
+
+
+.marginTB{
+
+margin-top: .5rem;
+
+}
+
+
+.number{
+
+padding: 0.3rem;
+
+}
+
+
+
+.product{
+
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+#Refrigerator, #Microwave{
+    
+    flex-direction: column-reverse;
+
+
+}
+
+
+.product-Content{
+
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.product-Img{
+
+   margin-top: .5rem;
+    
+    
+    }
+    
+    
+    
+
+
+ }
+
+
+ @media only screen and (max-width:399px) {
+
+
+    .Sub-reason-why-Us{
+
+flex-direction: column;
+
+    }
+    
+.padding-Left{
+
+padding-left: 0rem;
+
+}
+
+
+ }
+
+
+
+
+ @media only screen and (max-width:245px) {
+
+    html{
+
+  font-size: 10px;
+
+    }
+
+
+    .navbar{
+ 
+        top: 40px;
+
+        
+    }
+
+    
+ }
+
+
+
+ @media only screen and (max-width:187px) {
+
+    html{
+
+  font-size: 8px;
+
+    }
+
+
+    .navbar{
+ 
+        top: 32px;
+
+        
+    }
+
+    
+ }
+
+
+ @media only screen and (max-width:150px) {
+
+    html{
+
+  font-size: 6px;
+
+    }
+
+
+    .navbar{
+ 
+        top: 24px;
+
+        
+    }
+
+    
+ }
+
+
+
+ @media only screen and (max-width:407px) {
+
+
+
+    
+    .container{
+
+        font-size: 1rem;
+    
+    grid-template-columns: repeat(auto-fit, minmax(8.6rem, 8.61rem) );
+    
+    
+    }
+    
+    
+    
+
+    
+ }
+
+
+
+
+
+ @media only screen and (max-width:349px) {
+
+
+
+    
+    .container{
+
+        grid-gap: 1rem  .4rem ;
+    
+    
+    
+    }
+    
+    
+    
+
+    
+ }
+
+
+
+
+
+
+
+ @media only screen and (max-width:108px) {
+
+
+
+    
+    .mainHeading , .call , .heading-weDo , .heading-cities-Available {
+
+font-size: 1.5rem;    
+    
+    
+    }
+    
+    
+    .heading-cities-Available , .heading-about-Us, .call-Us-now{
+
+font-size:  1.8rem;
+
+    }
+    
+.marginTB {
+
+font-size: 1.3rem;    
+    
+    
+    }
+    
+    
+    
+
+    
+ }
+

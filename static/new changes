@@ -1,0 +1,83 @@
+/* .product{ added padding: 2rem ;} */
+/* .heading-weDo{  padding-bottom:.3rem;   ---->>        padding:1rem 0rem 0.3rem 0rem;} */
+
+/* 
+.marginTB {
+    padding: .5rem  ---> 1.5rem;
+} */
+
+
+
+/* 
+399 se niche, 
+
+.product {padding:.8rem;}
+.marginTB{padding:1rem} */
+/* ok*/
+
+
+
+
+
+/* span.yy{padding-top:1.1935rem;padding-bottom:1.1935rem}   ->   1.1rem 1.1```rem */
+
+
+/* .container span{border:2px solid #000;font-size:1.2rem;padding-top:.5rem;padding-bottom:.5rem;text-align:center;overflow:hidden;border-radius:15px;display:flex;align-items:center;justify-content:center;font-weight:700;background-color:rgb(190 79 152);color:#f0f8ff} */
+         /* font size -> 1.1rem */
+
+
+/* .ACcontent{padding: .4rem; font-weight: normal;} */
+/* font size 1.3rem */
+
+
+/* .container a:hover ->  box shadow  borderm none*/
+
+/* ok */
+
+
+
+
+/* 
+p.info-weDo.padding-X
+  | We are glad to possess a chance to serve you. We offer 
+  strong Home Services
+  |  for 
+  strong All Types of Products and for All Brands 
+  | which are 
+  strong Out of Warranty
+  |  like, 
+  strong AC, Refrigerator, Washing Machine, Microwave, TV, RO, etc. All Over India.
+  | We are a fully
+  |             private service center. Providing 
+  strong Chargeable Services. 
+  | We've one of the 
+  strong
+    | Best Team of Service
+    | Professionals
+  | , Aiming 
+  strong Consumer Satisfaction. 
+  | Our technicians are fully trained
+  |             to urge the Job Done.
+.call-Us-now
+ */
+
+
+
+/* 
+p.info-weDo.padding-X
+        | We are glad to possess a chance to serve you. We offer Home Services for all Types of Products and for All Brands which are Out of Warranty like, AC, Refrigerator, Washing Machine, Microwave, TV, RO, etc. All Over India. We are a fully private service center. Providing Chargeable Services. We've one of the Best Team of Service Professionals, Aiming Consumer Satisfaction. Our technicians are fully trained to urge the Job Done.
+.call-Us-now
+ */
+
+
+
+
+
+
+
+
+ 
+
+
+
+
