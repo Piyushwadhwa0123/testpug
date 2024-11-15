@@ -3,7 +3,7 @@ const app = express();
 const fs = require("fs");
 require("dotenv").config();
 const path = require("path");
-const port = process.env.port
+const port = process.env.port || 8000;
 const connectDB = require("./database/db");
 const { getCityContactByName } = require("./controllers/cityContact.controller");
 const { getCityByName } = require("./controllers/city.controller");
