@@ -275,10 +275,16 @@ const allowedTemplates = [
 ]
 
 
-//app.get('/', (req, res) => res.status(200).send('OK'));
 
 
 
+app.use((req, res, next) => {
+    const host = req.get('Host'); // Extract the Host header
+    console.log(host, "host");
+    if(host ==="www.servicerepairIndia.com"){
+        res.redirect("https://servicerepairIndia.com");
+    }
+});
 
 app.get('*', async (req, res) => {
     let path = req.path.trim().replace(/\/+$/g, "");
@@ -929,6 +935,9 @@ app.get('*', async (req, res) => {
             })
         }
     }
+    res.render("Repair-Service-Center", {
+        NumValue: 9784467344
+    })
 });
 
 
