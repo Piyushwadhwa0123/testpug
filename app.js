@@ -425,44 +425,44 @@ app.get('*', async (req, res) => {
                 
 
             }
-            // if(prefixRemoved ==="BlueStar"){
+            if(prefixRemoved ==="BlueStar"){
 
-            //     if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
-            //         res.render(`${templateKey}${v1}${v2}`, {
-            //             BrandName1: "Blue Star",
-            //             BrandName2: "BlueStar",
-            //             BrandContent: brandContent.content,
-            //             NumValue: 9784467344
+                if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
+                    res.render(`${templateKey}${v1}${v2}`, {
+                        BrandName1: "Blue Star",
+                        BrandName2: "BlueStar",
+                        BrandContent: brandContent.content,
+                        NumValue: 9784467344
     
-            //         });
+                    });
 
-            //     }else{
-            //         return res.render("Repair-Service-Center", {
-            //             NumValue: 9784467344
-            //         })
-            //     }
+                }else{
+                    return res.render("Repair-Service-Center", {
+                        NumValue: 9784467344
+                    })
+                }
 
                
-            // }
-            // if(prefixRemoved ==="WhiteWestinghouse"){
+            }
+            if(prefixRemoved ==="WhiteWestinghouse"){
 
-            //     if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
-            //         res.render(`${templateKey}${v1}${v2}`, {            
-            //             BrandName1: "White Westinghouse",
-            //             BrandName2: "WhiteWestinghouse",
-            //             BrandContent: brandContent.content,
-            //             NumValue: 9784467344
+                if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
+                    res.render(`${templateKey}${v1}${v2}`, {            
+                        BrandName1: "White Westinghouse",
+                        BrandName2: "WhiteWestinghouse",
+                        BrandContent: brandContent.content,
+                        NumValue: 9784467344
     
-            //         });
+                    });
 
-            //     }else{
-            //         return res.render("Repair-Service-Center", {
-            //             NumValue: 9784467344
-            //         })
-            //     }
+                }else{
+                    return res.render("Repair-Service-Center", {
+                        NumValue: 9784467344
+                    })
+                }
 
                 
-            // }
+            }
 
             if (isSingleWord) {
 
