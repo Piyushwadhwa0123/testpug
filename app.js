@@ -278,13 +278,11 @@ const allowedTemplates = [
 
 
 
-// app.use((req, res, next) => {
-//     const host = req.get('Host'); // Extract the Host header
-//     console.log(host, "host");
-//     if(host ==="www.servicerepairIndia.com"){
-//         res.redirect("https://localhost:8000");
-//     }
-// });
+app.use((req, res, next) => {
+    const host = req.get('Host'); // Extract the Host header
+    console.log(host, "host");
+    next();
+});
 
 app.get('*', async (req, res) => {
     let path = req.path.trim().replace(/\/+$/g, "");
