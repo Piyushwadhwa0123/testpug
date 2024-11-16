@@ -275,14 +275,20 @@ const allowedTemplates = [
 ]
 
 
-
+// redirection ...
 
 
 app.use((req, res, next) => {
     const host = req.get('Host'); // Extract the Host header
     console.log(host, "host");
+
+    if(host ==="servicerepairindia.com" ){
+        res.redirect("https://www.servicerepairindia.com");
+    }
     next();
 });
+
+
 
 app.get('*', async (req, res) => {
     let path = req.path.trim().replace(/\/+$/g, "");
