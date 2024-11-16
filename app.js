@@ -283,14 +283,14 @@ app.use((req, res, next) => {
     console.log(host, "host");
 
     if(host ==="servicerepairindia.com"){
-        res.redirect(`https://www.servicerepairindia.com/${req.path}`);
+        res.redirect(`https://www.servicerepairindia.com${req.path}`);
     }
     next();
 });
 
 app.get('*', async (req, res) => {
 
-    
+
     let path = req.path.trim().replace(/\/+$/g, "");
 
 
