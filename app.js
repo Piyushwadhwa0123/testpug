@@ -275,20 +275,14 @@ const allowedTemplates = [
 ]
 
 
-// redirection ...
+
 
 
 app.use((req, res, next) => {
     const host = req.get('Host'); // Extract the Host header
     console.log(host, "host");
-
-    if(host ==="servicerepairindia.com" ){
-        res.redirect("https://www.servicerepairindia.com");
-    }
     next();
 });
-
-
 
 app.get('*', async (req, res) => {
     let path = req.path.trim().replace(/\/+$/g, "");
@@ -412,7 +406,7 @@ app.get('*', async (req, res) => {
                 if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
                     res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "O General",
-                        BrandName2: "OGeneral",
+                        BrandName2: "O-GENERAL",
                         BrandContent: brandContent.content,
                         NumValue: 9784467344
     
@@ -451,7 +445,7 @@ app.get('*', async (req, res) => {
                 if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
                     res.render(`${templateKey}${v1}${v2}`, {            
                         BrandName1: "White Westinghouse",
-                        BrandName2: "WhiteWestinghouse",
+                        BrandName2: "White-Westinghouse",
                         BrandContent: brandContent.content,
                         NumValue: 9784467344
     
@@ -564,7 +558,7 @@ app.get('*', async (req, res) => {
                             
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",   
-                                CityName2: "NaviMumbai"
+                                CityName2: "Navi-Mumbai"
                             })
 
                         }else{
@@ -728,11 +722,11 @@ app.get('*', async (req, res) => {
 
                                 res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "O General",
-                                    BrandName2: "OGeneral",
+                                    BrandName2: "O-GENERAL",
                                     BrandContent: brandContent.content,
                                     NumValue: NumValue?.number,
                                     CityName1: "Navi Mumbai",   
-                                    CityName2: "NaviMumbai"
+                                    CityName2: "Navi-Mumbai"
                                 })
                                 
                             }else{
@@ -748,98 +742,7 @@ app.get('*', async (req, res) => {
                         if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
                             res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: "O General",
-                                BrandName2: "OGeneral",
-                                BrandContent: brandContent.content,
-                                NumValue: NumValue?.number,
-                                CityName1: afterSlash,
-                                CityName2: afterSlash
-                            }) 
-                        }else{
-
-                            return res.render("Repair-Service-Center", {
-                                NumValue: 9784467344
-                            })
-                        }
-                        
-
-                    }
-                    if(prefixRemoved === "BlueStar" ){
-
-
-                        if(afterSlash === "NaviMumbai"){
-
-
-                            if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
-
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
-                                    BrandName1: "Blue Star",
-                                    BrandName2: "BlueStar",
-                                    BrandContent: brandContent.content,
-                                    NumValue: NumValue?.number,
-                                    CityName1: "Navi Mumbai",   
-                                    CityName2: "NaviMumbai"
-                                })
-                                
-                            }else{
-
-                                return res.render("Repair-Service-Center", {
-                                    NumValue: 9784467344
-                                })
-                            }
-                            
-    
-                        }
-
-                        if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
-                                BrandName1: "Blue Star",
-                                BrandName2: "BlueStar",
-                                BrandContent: brandContent.content,
-                                NumValue: NumValue?.number,
-                                CityName1: afterSlash,
-                                CityName2: afterSlash
-                            }) 
-                        }else{
-
-                            return res.render("Repair-Service-Center", {
-                                NumValue: 9784467344
-                            })
-                        }
-                        
-
-                    }
-
-                    if(prefixRemoved === "WhiteWestinghouse" ){
-
-
-                        if(afterSlash === "NaviMumbai"){
-
-
-                            if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
-
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
-                                    BrandName1: "White Westinghouse",
-                                    BrandName2: "WhiteWestinghouse",
-                                    BrandContent: brandContent.content,
-                                    NumValue: NumValue?.number,
-                                    CityName1: "Navi Mumbai",   
-                                    CityName2: "NaviMumbai"
-                                })
-                                
-                            }else{
-
-                                return res.render("Repair-Service-Center", {
-                                    NumValue: 9784467344
-                                })
-                            }
-                            
-    
-                        }
-
-                        if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
-                                BrandName1: "White Westinghouse",
-                                BrandName2: "WhiteWestinghouse",
+                                BrandName2: "O-GENERAL",
                                 BrandContent: brandContent.content,
                                 NumValue: NumValue?.number,
                                 CityName1: afterSlash,
@@ -864,7 +767,7 @@ app.get('*', async (req, res) => {
                                 BrandContent: brandContent.content,
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",   
-                                CityName2: "NaviMumbai"
+                                CityName2: "Navi-Mumbai"
                             }) 
                         }else{
 
@@ -939,8 +842,8 @@ app.get('*', async (req, res) => {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
-                            BrandName1: prefixRemoved === "OGeneral" ? "O General": spacedPrefix || "BlueStar"?"Blue Star" :spacedPrefix || "WhiteWestinghouse"?"White Westinghouse": spacedPrefix,
-                            BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved || "BlueStar"?"BlueStar" :prefixRemoved || "WhiteWestinghouse"?"WhiteWestinghouse": prefixRemoved,
+                            BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                            BrandName2: prefixRemoved === "OGeneral" ? "O-GENERAL" : hyphenatedPrefix,
                             BrandContent: brandContent.content,
                             AreaName: `${afterSlashAreaName}`,
     
@@ -1000,8 +903,8 @@ app.get('*', async (req, res) => {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
-                            BrandName1: prefixRemoved === "OGeneral" ? "O General": spacedPrefix || "BlueStar"?"Blue Star" :spacedPrefix || "WhiteWestinghouse"?"White Westinghouse": spacedPrefix,
-                            BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved || "BlueStar"?"BlueStar" :prefixRemoved || "WhiteWestinghouse"?"WhiteWestinghouse": prefixRemoved,
+                            BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                            BrandName2: prefixRemoved === "OGeneral" ? "O-GENERAL" : hyphenatedPrefix,
                             BrandContent: brandContent.content,
                             AreaName1: `${afterSlashAreaName.replace(/-/g, ' ')}`,
                             AreaName2: `${afterSlashAreaName}`,
