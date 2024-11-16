@@ -406,7 +406,7 @@ app.get('*', async (req, res) => {
                 if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
                     res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "O General",
-                        BrandName2: "O-GENERAL",
+                        BrandName2: "OGeneral",
                         BrandContent: brandContent.content,
                         NumValue: 9784467344
     
@@ -426,7 +426,7 @@ app.get('*', async (req, res) => {
                 if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
                     res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "Blue Star",
-                        BrandName2: "Blue-Star",
+                        BrandName2: "BlueStar",
                         BrandContent: brandContent.content,
                         NumValue: 9784467344
     
@@ -445,7 +445,7 @@ app.get('*', async (req, res) => {
                 if(allowedTemplates.includes(`${templateKey}${v1}${v2}`)){
                     res.render(`${templateKey}${v1}${v2}`, {            
                         BrandName1: "White Westinghouse",
-                        BrandName2: "White-Westinghouse",
+                        BrandName2: "WhiteWestinghouse",
                         BrandContent: brandContent.content,
                         NumValue: 9784467344
     
@@ -558,7 +558,7 @@ app.get('*', async (req, res) => {
                             
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",   
-                                CityName2: "Navi-Mumbai"
+                                CityName2: "NaviMumbai"
                             })
 
                         }else{
@@ -631,14 +631,16 @@ app.get('*', async (req, res) => {
             if (v1 == 2 && v2 == 2 && v3 >= 2) {
 
                 const afterSlashCity = afterSlash.split('-')[0];
-                const afterSlashAreaName = afterSlash.split('-')[1];
-                const afterSlashSubAreaName = afterSlash.split('-').slice(2).join('-');
+                const afterSlashAreaName = afterSlash.split('-').slice(1).join('-');
                 const NumValue = await getCityContactByName(`${afterSlashCity}`);
-                const isSubCityThere = await getCityByName(`${afterSlashCity}`);
+                const isAreaFound = await getCityByName(`${afterSlashCity}2`, `${afterSlashAreaName}`);
+                console.log(NumValue);
+                console.log(isAreaFound);
+                const areaName1 = afterSlashAreaName.replace(/-/g, ' ');
 
 
 
-                if (NumValue !== null) {
+                if (NumValue !== null && isAreaFound) {
 
 
                     if(allowedTemplates.includes(`${templateKey}${v1}${v2}2`)){
@@ -647,8 +649,8 @@ app.get('*', async (req, res) => {
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
                             NumValue: NumValue?.number,
-                            AreaName1: `${afterSlashAreaName} ${afterSlashSubAreaName.replace(/-/g, ' ')}`,
-                            AreaName2: `${afterSlashAreaName}-${afterSlashSubAreaName}`,
+                            AreaName1: areaName1,
+                            AreaName2: `${afterSlashAreaName}`,
                         });
 
                     }else{
@@ -720,11 +722,11 @@ app.get('*', async (req, res) => {
 
                                 res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "O General",
-                                    BrandName2: "O-GENERAL",
+                                    BrandName2: "OGeneral",
                                     BrandContent: brandContent.content,
                                     NumValue: NumValue?.number,
                                     CityName1: "Navi Mumbai",   
-                                    CityName2: "Navi-Mumbai"
+                                    CityName2: "NaviMumbai"
                                 })
                                 
                             }else{
@@ -740,7 +742,98 @@ app.get('*', async (req, res) => {
                         if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
                             res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: "O General",
-                                BrandName2: "O-GENERAL",
+                                BrandName2: "OGeneral",
+                                BrandContent: brandContent.content,
+                                NumValue: NumValue?.number,
+                                CityName1: afterSlash,
+                                CityName2: afterSlash
+                            }) 
+                        }else{
+
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                        
+
+                    }
+                    if(prefixRemoved === "BlueStar" ){
+
+
+                        if(afterSlash === "NaviMumbai"){
+
+
+                            if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
+
+                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                    BrandName1: "Blue Star",
+                                    BrandName2: "BlueStar",
+                                    BrandContent: brandContent.content,
+                                    NumValue: NumValue?.number,
+                                    CityName1: "Navi Mumbai",   
+                                    CityName2: "NaviMumbai"
+                                })
+                                
+                            }else{
+
+                                return res.render("Repair-Service-Center", {
+                                    NumValue: 9784467344
+                                })
+                            }
+                            
+    
+                        }
+
+                        if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                BrandName1: "Blue Star",
+                                BrandName2: "BlueStar",
+                                BrandContent: brandContent.content,
+                                NumValue: NumValue?.number,
+                                CityName1: afterSlash,
+                                CityName2: afterSlash
+                            }) 
+                        }else{
+
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                        
+
+                    }
+
+                    if(prefixRemoved === "WhiteWestinghouse" ){
+
+
+                        if(afterSlash === "NaviMumbai"){
+
+
+                            if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
+
+                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                    BrandName1: "White Westinghouse",
+                                    BrandName2: "WhiteWestinghouse",
+                                    BrandContent: brandContent.content,
+                                    NumValue: NumValue?.number,
+                                    CityName1: "Navi Mumbai",   
+                                    CityName2: "NaviMumbai"
+                                })
+                                
+                            }else{
+
+                                return res.render("Repair-Service-Center", {
+                                    NumValue: 9784467344
+                                })
+                            }
+                            
+    
+                        }
+
+                        if(allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                BrandName1: "White Westinghouse",
+                                BrandName2: "WhiteWestinghouse",
                                 BrandContent: brandContent.content,
                                 NumValue: NumValue?.number,
                                 CityName1: afterSlash,
@@ -765,7 +858,7 @@ app.get('*', async (req, res) => {
                                 BrandContent: brandContent.content,
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",   
-                                CityName2: "Navi-Mumbai"
+                                CityName2: "NaviMumbai"
                             }) 
                         }else{
 
@@ -840,8 +933,8 @@ app.get('*', async (req, res) => {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
-                            BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
-                            BrandName2: prefixRemoved === "OGeneral" ? "O-GENERAL" : hyphenatedPrefix,
+                            BrandName1: prefixRemoved === "OGeneral" ? "O General": spacedPrefix || "BlueStar"?"Blue Star" :spacedPrefix || "WhiteWestinghouse"?"White Westinghouse": spacedPrefix,
+                            BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved || "BlueStar"?"BlueStar" :prefixRemoved || "WhiteWestinghouse"?"WhiteWestinghouse": prefixRemoved,
                             BrandContent: brandContent.content,
                             AreaName: `${afterSlashAreaName}`,
     
@@ -882,14 +975,13 @@ app.get('*', async (req, res) => {
                     })
                 }
                 const afterSlashCity = afterSlash.split('-')[0];
-                const afterSlashAreaName = afterSlash.split('-')[1];
-                const afterSlashSubAreaName = afterSlash.split('-').slice(2).join('-');
+                const afterSlashAreaName = afterSlash.split('-').slice(1).join('-');
                 const NumValue = await getCityContactByName(`${afterSlashCity}`);
-
+                const isAreaFound = await getCityByName(`${afterSlashCity}2`, `${afterSlashAreaName}`);
                 const spacedPrefix = prefixRemoved.replace(/([a-z])([A-Z])/g, '$1 $2');
                 const hyphenatedPrefix = prefixRemoved.replace(/([a-z])([A-Z])/g, '$1-$2');
 
-                const isAreaFound = await getCityByName(`${afterSlashCity}2`, `${afterSlashAreaName}-${afterSlashSubAreaName}`);
+                
                 console.log(isAreaFound, "isAreaFound");
                 console.log(NumValue, "NumValue");
 
@@ -902,11 +994,11 @@ app.get('*', async (req, res) => {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
-                            BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
-                            BrandName2: prefixRemoved === "OGeneral" ? "O-GENERAL" : hyphenatedPrefix,
+                            BrandName1: prefixRemoved === "OGeneral" ? "O General": spacedPrefix || "BlueStar"?"Blue Star" :spacedPrefix || "WhiteWestinghouse"?"White Westinghouse": spacedPrefix,
+                            BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved || "BlueStar"?"BlueStar" :prefixRemoved || "WhiteWestinghouse"?"WhiteWestinghouse": prefixRemoved,
                             BrandContent: brandContent.content,
-                            AreaName1: `${afterSlashAreaName} ${afterSlashSubAreaName.replace(/-/g, ' ')}`,
-                            AreaName2: `${afterSlashAreaName}-${afterSlashSubAreaName}`,
+                            AreaName1: `${afterSlashAreaName.replace(/-/g, ' ')}`,
+                            AreaName2: `${afterSlashAreaName}`,
     
                         });
 
