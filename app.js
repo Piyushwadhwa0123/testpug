@@ -296,23 +296,10 @@ app.get('*', async (req, res) => {
 
     const slashCount = (path.match(/\//g) || []).length;
 
-    if (slashCount === 1 && req.url.endsWith("robots.txt")) {
-        const robotsFilePath = "./robots.txt";
-
-        fs.readFile(robotsFilePath, 'utf-8', (err, data) => {
-            if (err) {
-                // Handle error, e.g., file not found or other file system issues
-                console.error("Error reading robots.txt:", err);
-                return res.status(500).send("Internal Server Error");
-            }
-
-           
-            
-            return res.end(data);
-            console.log("robots.txt file sent");
-        });
-
-        return;
+    if (slashCount === 1 && path.endsWith("robots.txt")) {
+        return res.render("Repair-Service-Center", {
+            NumValue: 9784467344
+        })
     }
     //Homepage
 
