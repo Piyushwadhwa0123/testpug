@@ -307,7 +307,7 @@ app.get('*', async (req, res) => {
             }
 
             console.log("robots.txt file sent");
-            res.setHeader('Content-Type', 'text/plain');
+            
             return res.send(data);
         });
 
