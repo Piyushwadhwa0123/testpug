@@ -296,9 +296,22 @@ app.get('*', async (req, res) => {
 
     const slashCount = (path.match(/\//g) || []).length;
 
-    if(slashCount === 1 && path.endsWith("robots.txt")){
-        const fileNeeded = fs.readFileSync(`./robots.txt`);
-        return res.end(fileNeeded);
+    if (slashCount === 1 && req.url.endsWith("robots.txt")) {
+        const robotsFilePath = "./robots.txt";
+
+        fs.readFile(robotsFilePath, 'utf-8', (err, data) => {
+            if (err) {
+                // Handle error, e.g., file not found or other file system issues
+                console.error("Error reading robots.txt:", err);
+                return res.status(500).send("Internal Server Error");
+            }
+
+            console.log("robots.txt file sent");
+            res.setHeader('Content-Type', 'text/plain');
+            return res.send(data);
+        });
+
+        return;
     }
     //Homepage
 
