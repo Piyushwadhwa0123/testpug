@@ -294,6 +294,12 @@ app.get('*', async (req, res) => {
     let path = req.path.trim().replace(/\/+$/g, "");
 
 
+    const slashCount = (path.match(/\//g) || []).length;
+
+    if(slashCount === 1 && path.endsWith("robots.txt")){
+        const fileNeeded = fs.readFileSync(`./robots.txt`);
+        return res.end(fileNeeded);
+    }
     //Homepage
 
     if (path === "/" || path === "") {
@@ -306,11 +312,11 @@ app.get('*', async (req, res) => {
 
 
 
-    const slashCount = (path.match(/\//g) || []).length;
+    
 
     let parts = path.split('/'); // Split by slashes
     console.log(parts[1], "parts[1]");
-    let dashCount = (parts[1].match(/-/g) || []).length;
+    let dashCount = (parts[1]?.match(/-/g) || []).length;
 
 
 
@@ -335,10 +341,7 @@ app.get('*', async (req, res) => {
         }
     }
 
-    else if(slashCount === 1 && path.endsWith("robots.txt")){
-        const fileNeeded = fs.readFileSync(`./robots.txt`);
-        return res.end(fileNeeded);
-    }
+   
 
 
 
