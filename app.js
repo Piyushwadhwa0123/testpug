@@ -306,9 +306,10 @@ app.get('*', async (req, res) => {
                 return res.status(500).send("Internal Server Error");
             }
 
-            console.log("robots.txt file sent");
+           
             
-            return res.send(data);
+            return res.end(data);
+            console.log("robots.txt file sent");
         });
 
         return;
