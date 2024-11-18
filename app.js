@@ -18,11 +18,13 @@ connectDB();
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+const robots = fs.readFileSync('robots.txt')
 
 // Express specific stuff
 app.use('/static', express.static('static'))
 app.use(express.urlencoded())
 app.use(express.json());
+app.use('/favicon.ico', express.static('static/img/favicon.ico'))
 
 const allowedFiles = [
     "sitemap.xml",
@@ -297,9 +299,12 @@ app.get('*', async (req, res) => {
     const slashCount = (path.match(/\//g) || []).length;
 
     if (slashCount === 1 && path.endsWith("robots.txt")) {
+
+
         return res.render("Repair-Service-Center", {
             NumValue: 9784467344
         })
+            //return res.end(robots)
     }
     //Homepage
 
