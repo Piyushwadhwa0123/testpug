@@ -649,9 +649,6 @@ const allowedTemplates = [
 ]
 
 
-
-
-
 app.use((req, res, next) => {
     const host = req.get('Host'); // Extract the Host header
     console.log(host, "host");
