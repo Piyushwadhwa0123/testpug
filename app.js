@@ -670,10 +670,8 @@ app.get('*', async (req, res) => {
     if (slashCount === 1 && path.endsWith("robots.txt")) {
 
 
-        // return res.send("Repair-Service-Center", {
-        //     NumValue: 9784467344
-        // })
-        return res.end(robots)
+        
+        return res.end(robots);
     }
     //Homepage
 
