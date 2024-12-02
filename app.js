@@ -671,7 +671,10 @@ app.get('*', async (req, res) => {
 
 
         
-        return res.type('text/plain').end(robots);
+        //return res.type('text/plain').end(robots);
+        res.render("Repair-Service-Center", {
+            NumValue: 9784467344
+        })
     }
     //Homepage
 
