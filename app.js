@@ -659,6 +659,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.send(robots);
+});
+
 app.get('*', async (req, res) => {
 
 
