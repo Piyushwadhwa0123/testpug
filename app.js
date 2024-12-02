@@ -1006,6 +1006,38 @@ app.get('*', async (req, res) => {
 
                 if (NumValue !== null && isAreaFound) {
 
+                    if(afterSlashCity ==="NaviMumbai"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                CityName1: "Navi Mumbai",
+                                CityName2: afterSlashCity,
+                                NumValue: NumValue?.number,
+                                AreaName: afterSlashAreaName,
+    
+                            });
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }else if(afterSlashCity === "GreaterNoida"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                CityName1: "Greater Noida",
+                                CityName2: afterSlashCity,
+                                NumValue: NumValue?.number,
+                                AreaName: afterSlashAreaName,
+    
+                            });
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }
+
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
                         res.render(`${templateKey}${v1}${v2}${v3}`, {
@@ -1044,6 +1076,42 @@ app.get('*', async (req, res) => {
 
 
                 if (NumValue !== null && isAreaFound) {
+
+                    if(afterSlashCity === "NaviMumbai"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
+
+                            res.render(`${templateKey}${v1}${v2}2`, {
+                                CityName1: "Navi Mumbai",
+                                CityName2: afterSlashCity,
+                                NumValue: NumValue?.number,
+                                AreaName1: areaName1,
+                                AreaName2: `${afterSlashAreaName}`,
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }else if(afterSlashCity === "GreaterNoida"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
+
+                            res.render(`${templateKey}${v1}${v2}2`, {
+                                CityName1: "Greater Noida",
+                                CityName2: afterSlashCity,
+                                NumValue: NumValue?.number,
+                                AreaName1: areaName1,
+                                AreaName2: `${afterSlashAreaName}`,
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }
 
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
@@ -1201,6 +1269,17 @@ app.get('*', async (req, res) => {
                             }
 
 
+                        }else if(afterSlash ==="GreaterNoida"){
+                            if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
+                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                    BrandName1: "Blue Star",
+                                    BrandName2: "BlueStar",
+                                    BrandContent: brandContent.content,
+                                    NumValue: NumValue?.number,
+                                    CityName1: "Greater Noida",
+                                    CityName2:"GreaterNoida",
+                                    })
+                            }
                         }
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
@@ -1247,6 +1326,24 @@ app.get('*', async (req, res) => {
                             }
 
 
+                        } else if(afterSlash === "GreaterNoida") {
+                            if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+
+                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                    BrandName1: "White Westinghouse",
+                                    BrandName2: "WhiteWestinghouse",
+                                    BrandContent: brandContent.content,
+                                    NumValue: NumValue?.number,
+                                    CityName1: "Greater Noida",
+                                    CityName2: "GreaterNoida"
+                                })
+
+                            } else {
+
+                                return res.render("Repair-Service-Center", {
+                                    NumValue: 9784467344
+                                })
+                            }
                         }
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
@@ -1278,6 +1375,26 @@ app.get('*', async (req, res) => {
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",
                                 CityName2: "NaviMumbai"
+                            })
+                        } else {
+
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+
+
+                    }
+                    else if (afterSlash === "GreaterNoida") {
+
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                BrandName1: spacedPrefix,
+                                BrandName2: hyphenatedPrefix,
+                                BrandContent: brandContent.content,
+                                NumValue: NumValue?.number,
+                                CityName1: "Greater Noida",
+                                CityName2: "GreaterNoida"
                             })
                         } else {
 
@@ -1344,6 +1461,50 @@ app.get('*', async (req, res) => {
                 const isAreaFound = await getCityByName(`${afterSlashCity}1`, `${afterSlashAreaName}`);
 
                 if (NumValue !== null && isAreaFound) {
+                    if(afterSlashCity ==="NaviMumbai"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                NumValue: NumValue?.number,
+                                CityName1: "Navi Mumbai",
+                                CityName2: "NaviMumbai",
+                                BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                                BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved,
+                                BrandContent: brandContent.content,
+                                AreaName: `${afterSlashAreaName}`,
+    
+    
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+
+                    }else if(afterSlashCity ==="GreaterNoida"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
+
+                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                NumValue: NumValue?.number,
+                                CityName1: "Greater Noida",
+                                CityName2: "GreaterNoida",
+                                BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                                BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved,
+                                BrandContent: brandContent.content,
+                                AreaName: `${afterSlashAreaName}`,
+    
+    
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }
 
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
@@ -1405,6 +1566,49 @@ app.get('*', async (req, res) => {
                 console.log(NumValue, "NumValue");
 
                 if (NumValue !== null && isAreaFound) {
+                    if(afterSlashCity === "NaviMumbai"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
+
+                            res.render(`${templateKey}${v1}${v2}2`, {
+                                NumValue: NumValue?.number,
+                                CityName1: "Navi Mumbai",
+                                CityName2: "NaviMumbai",
+                                BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                                BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved,
+                                BrandContent: brandContent.content,
+                                AreaName1: `${afterSlashAreaName.replace(/-/g, ' ')}`,
+                                AreaName2: `${afterSlashAreaName}`,
+    
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }else if(afterSlashCity === "GreaterNoida"){
+                        if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
+
+                            res.render(`${templateKey}${v1}${v2}2`, {
+                                NumValue: NumValue?.number,
+                                CityName1: "Greater Noida",
+                                CityName2: "GreaterNoida",
+                                BrandName1: prefixRemoved === "OGeneral" ? "O General" : spacedPrefix,
+                                BrandName2: prefixRemoved === "OGeneral" ? "OGeneral" : prefixRemoved,
+                                BrandContent: brandContent.content,
+                                AreaName1: `${afterSlashAreaName.replace(/-/g, ' ')}`,
+                                AreaName2: `${afterSlashAreaName}`,
+    
+                            });
+    
+                        } else {
+    
+                            return res.render("Repair-Service-Center", {
+                                NumValue: 9784467344
+                            })
+                        }
+                    }
 
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
