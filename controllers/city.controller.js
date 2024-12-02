@@ -12,7 +12,7 @@ exports.getCityByName = async (name, actualName) => {
         }
 
         const cityData = await city.findOne({ name });
-        //console.log(cityData, "city");
+        
 
         if (!cityData) {
             return { message: "City not found" };
@@ -20,7 +20,7 @@ exports.getCityByName = async (name, actualName) => {
 
         // Check if `actualName` exists in the `content` array
         const contentArray = cityData.content;
-        console.log(contentArray, "contentArray");
+        
         if (Array.isArray(contentArray) && contentArray.includes(actualName)) {
             console.log("found");
             return true;

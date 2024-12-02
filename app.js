@@ -696,7 +696,7 @@ app.get('*', async (req, res) => {
 
 
     let parts = path.split('/'); // Split by slashes
-    console.log(parts[1], "parts[1]");
+    
     let dashCount = (parts[1]?.match(/-/g) || []).length;
 
 
@@ -780,9 +780,9 @@ app.get('*', async (req, res) => {
                 readyTemplateKey = readyTemplateKey.replace(/^TV/, "Tv");
             }
             const brandContent = await getBrandContentByName(`${prefixRemoved}-${readyTemplateKey}`);
-            console.log(brandContent);
+            
             if (brandContent.message == "Brand content not found") {
-                console.log("Homepage rendered");
+                console.log("Homepage rendered due to brand content not found");
                 return res.render("Repair-Service-Center", {
                     NumValue: 9784467344
                 })
@@ -1171,7 +1171,7 @@ app.get('*', async (req, res) => {
 
                 const brandContent = await getBrandContentByName(`${prefixRemoved}-${readyTemplateKey}`);
 
-                console.log(brandContent);
+                
                 if (brandContent.message == "Brand content not found") {
                     return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
@@ -1446,7 +1446,6 @@ app.get('*', async (req, res) => {
 
                 const brandContent = await getBrandContentByName(`${prefixRemoved}-${readyTemplateKey}`);
 
-                console.log(brandContent);
                 if (brandContent.message == "Brand content not found") {
                     return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
@@ -1547,7 +1546,6 @@ app.get('*', async (req, res) => {
                     readyTemplateKey = readyTemplateKey.replace(/^TV/, "Tv");
                 }
                 const brandContent = await getBrandContentByName(`${prefixRemoved}-${readyTemplateKey}`);
-                console.log(brandContent);
 
                 if (brandContent.message == "Brand content not found") {
                     return res.render("Repair-Service-Center", {
