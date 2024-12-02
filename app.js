@@ -671,7 +671,7 @@ app.get('*', async (req, res) => {
 
 
         
-        return res.end(robots);
+        return res.type('text/plain').end(robots);
     }
     //Homepage
 
