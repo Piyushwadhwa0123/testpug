@@ -10,7 +10,7 @@ const getAllCityContacts = async (req, res) => {
 const getCityContactByName = async (name) => {
 
     const cityContact = await CityContact.findOne({ name :name });   
-    console.log(cityContact);         
+           
     return (cityContact);
 };
 
