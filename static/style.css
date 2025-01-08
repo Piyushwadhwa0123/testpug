@@ -838,3 +838,36 @@ margin: 0rem auto;
 
             text-align: center;
            }
+
+
+           .tblr{
+            /* display: flex; */
+            /* flex-direction: row; */
+            /* justify-content: center; */
+           }
+
+           .tbl{
+
+            width: 100%;
+            padding-left: .5rem;
+            padding-right: .5rem;
+
+           }
+
+
+         
+           .tbltd{
+padding-left: .5rem;
+padding-top: 1rem;
+padding-bottom: 1rem;
+
+
+
+           }
+
+           .tbltd a{
+ color: #000;
+
+
+           }
+
