@@ -216,6 +216,6 @@ padding-bottom: 1rem;
 .tblr{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
    }
 
