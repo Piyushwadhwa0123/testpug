@@ -654,7 +654,7 @@ app.use((req, res, next) => {
     console.log(host, "host");
 
     if (host === "servicerepairindia.com") {
-        res.redirect(`https://www.servicerepairindia.com${req.path}`);
+        return res.redirect(`https://www.servicerepairindia.com${req.path}`);
     }
     next();
 });
@@ -677,7 +677,7 @@ app.get('*', async (req, res) => {
 
         
         //return res.type('text/plain').end(robots);
-        res.render("Repair-Service-Center", {
+        return res.render("Repair-Service-Center", {
             NumValue: 9784467344
         })
     }
@@ -794,7 +794,7 @@ app.get('*', async (req, res) => {
             if (prefixRemoved === "OGeneral") {
 
                 if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
-                    res.render(`${templateKey}${v1}${v2}`, {
+                    return res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "O General",
                         BrandName2: "OGeneral",
                         BrandContent: brandContent.content,
@@ -814,7 +814,7 @@ app.get('*', async (req, res) => {
             if (prefixRemoved === "BlueStar") {
 
                 if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
-                    res.render(`${templateKey}${v1}${v2}`, {
+                    return res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "Blue Star",
                         BrandName2: "BlueStar",
                         BrandContent: brandContent.content,
@@ -833,7 +833,7 @@ app.get('*', async (req, res) => {
             if (prefixRemoved === "WhiteWestinghouse") {
 
                 if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
-                    res.render(`${templateKey}${v1}${v2}`, {
+                    return res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: "White Westinghouse",
                         BrandName2: "WhiteWestinghouse",
                         BrandContent: brandContent.content,
@@ -854,7 +854,7 @@ app.get('*', async (req, res) => {
 
                 if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
 
-                    res.render(`${templateKey}${v1}${v2}`, {
+                    return res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: prefixRemoved,
                         BrandName2: prefixRemoved,
                         BrandContent: brandContent.content,
@@ -877,7 +877,7 @@ app.get('*', async (req, res) => {
 
 
                 if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
-                    res.render(`${templateKey}${v1}${v2}`, {
+                    return res.render(`${templateKey}${v1}${v2}`, {
                         BrandName1: spacedPrefix,
                         BrandName2: hyphenatedPrefix,
                         BrandContent: brandContent.content,
@@ -944,7 +944,7 @@ app.get('*', async (req, res) => {
                     if (afterSlash === "NaviMumbai") {
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
 
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",
@@ -961,7 +961,7 @@ app.get('*', async (req, res) => {
 
                     } else if (afterSlash === "GreaterNoida") {
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
 
                                 NumValue: NumValue?.number,
                                 CityName1: "Greater Noida",
@@ -976,7 +976,7 @@ app.get('*', async (req, res) => {
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                        res.render(`${templateKey}${v1}${v2}${v3}`, {
+                        return res.render(`${templateKey}${v1}${v2}${v3}`, {
                             CityName1: afterSlash,
                             CityName2: afterSlash,
                             NumValue: NumValue?.number
@@ -990,7 +990,7 @@ app.get('*', async (req, res) => {
 
 
                 }
-                res.render("Repair-Service-Center", {
+                return res.render("Repair-Service-Center", {
                     NumValue: 9784467344
                 })
             }
@@ -1008,7 +1008,7 @@ app.get('*', async (req, res) => {
 
                     if(afterSlashCity ==="NaviMumbai"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 CityName1: "Navi Mumbai",
                                 CityName2: afterSlashCity,
                                 NumValue: NumValue?.number,
@@ -1023,7 +1023,7 @@ app.get('*', async (req, res) => {
                         }
                     }else if(afterSlashCity === "GreaterNoida"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 CityName1: "Greater Noida",
                                 CityName2: afterSlashCity,
                                 NumValue: NumValue?.number,
@@ -1040,7 +1040,7 @@ app.get('*', async (req, res) => {
 
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                        res.render(`${templateKey}${v1}${v2}${v3}`, {
+                        return res.render(`${templateKey}${v1}${v2}${v3}`, {
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
                             NumValue: NumValue?.number,
@@ -1056,7 +1056,7 @@ app.get('*', async (req, res) => {
 
 
                 } else {
-                    res.render("Repair-Service-Center", {
+                    return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
                     })
                 }
@@ -1080,7 +1080,7 @@ app.get('*', async (req, res) => {
                     if(afterSlashCity === "NaviMumbai"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                            res.render(`${templateKey}${v1}${v2}2`, {
+                            return res.render(`${templateKey}${v1}${v2}2`, {
                                 CityName1: "Navi Mumbai",
                                 CityName2: afterSlashCity,
                                 NumValue: NumValue?.number,
@@ -1097,7 +1097,7 @@ app.get('*', async (req, res) => {
                     }else if(afterSlashCity === "GreaterNoida"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                            res.render(`${templateKey}${v1}${v2}2`, {
+                            return res.render(`${templateKey}${v1}${v2}2`, {
                                 CityName1: "Greater Noida",
                                 CityName2: afterSlashCity,
                                 NumValue: NumValue?.number,
@@ -1116,7 +1116,7 @@ app.get('*', async (req, res) => {
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                        res.render(`${templateKey}${v1}${v2}2`, {
+                        return res.render(`${templateKey}${v1}${v2}2`, {
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
                             NumValue: NumValue?.number,
@@ -1133,7 +1133,7 @@ app.get('*', async (req, res) => {
 
 
                 } else {
-                    res.render("Repair-Service-Center", {
+                    return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
                     })
                 }
@@ -1191,7 +1191,7 @@ app.get('*', async (req, res) => {
 
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "O General",
                                     BrandName2: "OGeneral",
                                     BrandContent: brandContent.content,
@@ -1210,7 +1210,7 @@ app.get('*', async (req, res) => {
 
                         }else if(afterSlash === "GreaterNoida"){
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "O General",
                                     BrandName2: "OGeneral",
                                     BrandContent: brandContent.content,
@@ -1227,7 +1227,7 @@ app.get('*', async (req, res) => {
                             }
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: "O General",
                                 BrandName2: "OGeneral",
                                 BrandContent: brandContent.content,
@@ -1252,7 +1252,7 @@ app.get('*', async (req, res) => {
 
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "Blue Star",
                                     BrandName2: "BlueStar",
                                     BrandContent: brandContent.content,
@@ -1271,7 +1271,7 @@ app.get('*', async (req, res) => {
 
                         }else if(afterSlash ==="GreaterNoida"){
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)){
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "Blue Star",
                                     BrandName2: "BlueStar",
                                     BrandContent: brandContent.content,
@@ -1283,7 +1283,7 @@ app.get('*', async (req, res) => {
                         }
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: "Blue Star",
                                 BrandName2: "BlueStar",
                                 BrandContent: brandContent.content,
@@ -1309,7 +1309,7 @@ app.get('*', async (req, res) => {
 
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "White Westinghouse",
                                     BrandName2: "WhiteWestinghouse",
                                     BrandContent: brandContent.content,
@@ -1329,7 +1329,7 @@ app.get('*', async (req, res) => {
                         } else if(afterSlash === "GreaterNoida") {
                             if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                                res.render(`${templateKey}${v1}${v2}${v3}`, {
+                                return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                     BrandName1: "White Westinghouse",
                                     BrandName2: "WhiteWestinghouse",
                                     BrandContent: brandContent.content,
@@ -1347,7 +1347,7 @@ app.get('*', async (req, res) => {
                         }
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: "White Westinghouse",
                                 BrandName2: "WhiteWestinghouse",
                                 BrandContent: brandContent.content,
@@ -1368,7 +1368,7 @@ app.get('*', async (req, res) => {
                     if (afterSlash === "NaviMumbai") {
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: spacedPrefix,
                                 BrandName2: hyphenatedPrefix,
                                 BrandContent: brandContent.content,
@@ -1388,7 +1388,7 @@ app.get('*', async (req, res) => {
                     else if (afterSlash === "GreaterNoida") {
 
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 BrandName1: spacedPrefix,
                                 BrandName2: hyphenatedPrefix,
                                 BrandContent: brandContent.content,
@@ -1409,7 +1409,7 @@ app.get('*', async (req, res) => {
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                        res.render(`${templateKey}${v1}${v2}${v3}`, {
+                        return res.render(`${templateKey}${v1}${v2}${v3}`, {
                             BrandName1: spacedPrefix,
                             BrandName2: hyphenatedPrefix,
                             BrandContent: brandContent.content,
@@ -1427,7 +1427,7 @@ app.get('*', async (req, res) => {
 
 
                 } else {
-                    res.render("Repair-Service-Center", {
+                    return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
                     })
                 }
@@ -1463,7 +1463,7 @@ app.get('*', async (req, res) => {
                     if(afterSlashCity ==="NaviMumbai"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",
                                 CityName2: "NaviMumbai",
@@ -1485,7 +1485,7 @@ app.get('*', async (req, res) => {
                     }else if(afterSlashCity ==="GreaterNoida"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                            res.render(`${templateKey}${v1}${v2}${v3}`, {
+                            return res.render(`${templateKey}${v1}${v2}${v3}`, {
                                 NumValue: NumValue?.number,
                                 CityName1: "Greater Noida",
                                 CityName2: "GreaterNoida",
@@ -1508,7 +1508,7 @@ app.get('*', async (req, res) => {
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}${v3}`)) {
 
-                        res.render(`${templateKey}${v1}${v2}${v3}`, {
+                        return res.render(`${templateKey}${v1}${v2}${v3}`, {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
@@ -1531,7 +1531,7 @@ app.get('*', async (req, res) => {
 
 
                 } else {
-                    res.render("Repair-Service-Center", {
+                    return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
                     })
                 }
@@ -1567,7 +1567,7 @@ app.get('*', async (req, res) => {
                     if(afterSlashCity === "NaviMumbai"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                            res.render(`${templateKey}${v1}${v2}2`, {
+                            return res.render(`${templateKey}${v1}${v2}2`, {
                                 NumValue: NumValue?.number,
                                 CityName1: "Navi Mumbai",
                                 CityName2: "NaviMumbai",
@@ -1588,7 +1588,7 @@ app.get('*', async (req, res) => {
                     }else if(afterSlashCity === "GreaterNoida"){
                         if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                            res.render(`${templateKey}${v1}${v2}2`, {
+                            return res.render(`${templateKey}${v1}${v2}2`, {
                                 NumValue: NumValue?.number,
                                 CityName1: "Greater Noida",
                                 CityName2: "GreaterNoida",
@@ -1611,7 +1611,7 @@ app.get('*', async (req, res) => {
 
                     if (allowedTemplates.includes(`${templateKey}${v1}${v2}2`)) {
 
-                        res.render(`${templateKey}${v1}${v2}2`, {
+                        return res.render(`${templateKey}${v1}${v2}2`, {
                             NumValue: NumValue?.number,
                             CityName1: afterSlashCity,
                             CityName2: afterSlashCity,
@@ -1634,7 +1634,7 @@ app.get('*', async (req, res) => {
 
 
                 } else {
-                    res.render("Repair-Service-Center", {
+                    return res.render("Repair-Service-Center", {
                         NumValue: 9784467344
                     })
                 }
@@ -1646,7 +1646,7 @@ app.get('*', async (req, res) => {
             })
         }
     }
-    res.render("Repair-Service-Center", {
+    return res.render("Repair-Service-Center", {
         NumValue: 9784467344
     })
 });
