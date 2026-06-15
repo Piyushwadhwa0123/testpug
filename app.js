@@ -741,7 +741,7 @@ app.get('*', async (req, res) => {
             console.log(`${templateKey}${v1}${v2}`);
 
             if (allowedTemplates.includes(`${templateKey}${v1}${v2}`)) {
-                res.render(`${templateKey}${v1}${v2}`, {
+                return res.render(`${templateKey}${v1}${v2}`, {
                     NumValue: 9784467344
                 });
             }
